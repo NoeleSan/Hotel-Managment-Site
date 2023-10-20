@@ -1,0 +1,46 @@
+<div class="container shadow-lg my-3">
+    <form action="" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">Тип акции</label>
+            <select class="form-control" name="eventType" required="" id="id_eventType">
+                <option value="" selected="">---------</option>
+
+                <option value="Movie">Фильм</option>
+
+                <option value="Theater">Театр</option>
+
+                <option value="Conference">Собрание</option>
+
+                <option value="Concert">Концерт</option>
+
+                <option value="Entertainment">Развлечения</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Место</label>
+            <input type="text" class="form-control" name="location" maxlength="100" required="" id="id_location">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Начало</label>
+            <input type="date" class="form-control" name="startDate" required="" id="id_startDate">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlInput1">Окончание</label>
+            <input type="date" class="form-control" name="endDate" required="" id="id_endDate">
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Описание</label>
+            <textarea class="form-control" name="explanation" cols="40" rows="10" required=""
+                id="id_explanation"></textarea>
+        </div>
+
+
+        <button type="submit" class="btn btn-success w-100">Сохранить</button>
+
+    </form>
+</div>

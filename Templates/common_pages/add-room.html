@@ -1,0 +1,54 @@
+<div class="container clearfix shadow-lg p-5 my-5">
+    <form action="" method="POST" class="my-5">
+        {% csrf_token %}
+
+        <div class="row mt-5">
+            <div class="col-6">
+                <div class="form-group pt-3">
+                    <label for="item-type"><b>Код номера: </b></label>
+                    <input type="number" class="form-control border border-secondary" id="item-type" name="number" />
+                </div>
+
+                <div class="form-group">
+                    <label for="item-quantity"><b>Количество кроватей: </b></label>
+                    <input type="number" class="form-control border border-secondary" id="item-quantity" name="beds" />
+                </div>
+
+                <div class="form-group">
+                    <label for="item-quantity"><b>Цена: </b></label>
+                    <input type="number" class="form-control border border-secondary" id="item-quantity" name="price" />
+                </div>
+            </div>
+
+            <div class="col-6">
+                <div class="form-group pt-3">
+                    <label for="item-type"><b>Вместимость: </b></label>
+                    <input type="number" min="0" class="form-control border border-secondary" id="item-type"
+                        name="capacity" />
+                </div>
+
+                <div class="form-group">
+                    <label for="item-quantity"><b>Тип номера:</b></label>
+                    <select class="form-control border border-secondary" id="item-quantity" name="type">
+
+                    <option value="King" {% if room.roomType == 'King' %} selected {% endif %}>Царский</option>
+
+                    <option value="Luxury" {% if room.roomType == 'Luxury' %} selected {% endif %}>Богатый
+                    </option>
+
+                    <option value="Normal" {% if room.roomType == 'Normal' %} selected {% endif %}>Обычный
+                    </option>
+
+                    <option value="Economic" {% if room.roomType == 'Economic' %} selected {% endif %}>Экономный
+                    </option>
+
+                </select>
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success px-4 float-right">
+            Добавить номер
+        </button>
+    </form>
+</div>
+<div class="clearfix my-5 py-1">&nbsp;</div>
